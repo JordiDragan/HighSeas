@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Enemy" load_steps=5 format=3 uid="uid://biui088hs5pr0"]
+
+[ext_resource type="Script" path="res://EnemyType.gd" id="1_nhfv6"]
+[ext_resource type="Script" path="res://Scripts/PickupResource.gd" id="1_p8l80"]
+[ext_resource type="Resource" uid="uid://dk2lf6uv65rhs" path="res://resources/Pickups/Green Gem.tres" id="2_6aftj"]
+[ext_resource type="Texture2D" uid="uid://bprabqxvctpju" path="res://rpgcosa/4 v1.png" id="2_wdua5"]
+
+[resource]
+script = ExtResource("1_nhfv6")
+title = "Triple"
+texture = ExtResource("2_wdua5")
+health = 3.0
+damage = 9.0
+drops = Array[ExtResource("1_p8l80")]([ExtResource("2_6aftj")])

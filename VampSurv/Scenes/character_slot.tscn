@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://y4ngp2rfif02"]
+
+[ext_resource type="Script" path="res://Scripts/character_slot.gd" id="1_ufpfo"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k4q03"]
+load_path = "res://.godot/imported/GUI.png-2bb451b023c65b0d861b594128f399d1.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftrrk"]
+atlas = SubResource("CompressedTexture2D_k4q03")
+region = Rect2(0, 96, 48, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pnyo3"]
+texture = SubResource("AtlasTexture_ftrrk")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 5.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="CharacterSlot" type="Panel"]
+custom_minimum_size = Vector2(100, 100)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_pnyo3")
+script = ExtResource("1_ufpfo")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.5
+offset_top = -37.5
+offset_right = 37.5
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
+
+[node name="Select" type="Line2D" parent="."]
+visible = false
+points = PackedVector2Array(6, 6, 94, 6, 94, 95, 6, 95)
+closed = true
+width = 3.0
+default_color = Color(1, 0.768627, 0, 1)
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

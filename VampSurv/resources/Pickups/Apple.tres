@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Health" load_steps=5 format=3 uid="uid://ds3olwt3d7agn"]
+
+[ext_resource type="Texture2D" uid="uid://cs4eydd7mb56t" path="res://sprites/Food.png" id="1_8xw3j"]
+[ext_resource type="Script" path="res://Scripts/Health.gd" id="2_2kffr"]
+[ext_resource type="AudioStream" uid="uid://dtgoq5ixbc4an" path="res://SFX/162387__zandernoriega__health_1(1).wav" id="3_uiet7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cq7kv"]
+atlas = ExtResource("1_8xw3j")
+region = Rect2(64, 16, 15, 16)
+
+[resource]
+script = ExtResource("2_2kffr")
+amount = 20
+title = "Apple"
+icon = SubResource("AtlasTexture_cq7kv")
+description = "+20 Health"
+sound = ExtResource("3_uiet7")
+weight = 5.0

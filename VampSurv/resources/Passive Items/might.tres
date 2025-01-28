@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="PassiveItem" load_steps=7 format=3 uid="uid://crrceg6ika6yg"]
+
+[ext_resource type="Script" path="res://Scripts/PassiveItem.gd" id="1_edrxc"]
+[ext_resource type="Texture2D" uid="uid://bnp0lufrajggv" path="res://sprites/Sprite-Spinach.png" id="2_qa2x5"]
+[ext_resource type="Script" path="res://Scripts/Stats.gd" id="3_o063k"]
+
+[sub_resource type="Resource" id="Resource_bm5i3"]
+script = ExtResource("3_o063k")
+description = "+10% Damage"
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.1
+area = 0.0
+magnet = 0.0
+growth = 0.0
+luck = 0.0
+
+[sub_resource type="Resource" id="Resource_5e200"]
+script = ExtResource("3_o063k")
+description = "+20% Damage"
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.2
+area = 0.0
+magnet = 0.0
+growth = 0.0
+luck = 0.0
+
+[sub_resource type="Resource" id="Resource_3xekf"]
+script = ExtResource("3_o063k")
+description = "+30% Damage"
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.3
+area = 0.0
+magnet = 0.0
+growth = 0.0
+luck = 0.0
+
+[resource]
+script = ExtResource("1_edrxc")
+upgrades = Array[ExtResource("3_o063k")]([SubResource("Resource_bm5i3"), SubResource("Resource_5e200"), SubResource("Resource_3xekf")])
+title = "Might"
+icon = ExtResource("2_qa2x5")
+texture = ExtResource("2_qa2x5")

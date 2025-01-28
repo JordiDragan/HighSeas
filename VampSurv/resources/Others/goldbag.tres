@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Gold" load_steps=3 format=3 uid="uid://cwcr0hok1wxwl"]
+
+[ext_resource type="Script" path="res://Scripts/Gold.gd" id="1_t7mh6"]
+[ext_resource type="Texture2D" uid="uid://bvk02nb4xoeel" path="res://sprites/void-bag.png" id="2_pmf7w"]
+
+[resource]
+script = ExtResource("1_t7mh6")
+gold = 5
+title = "Gold"
+texture = ExtResource("2_pmf7w")

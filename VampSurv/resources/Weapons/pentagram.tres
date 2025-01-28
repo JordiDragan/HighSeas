@@ -1,0 +1,63 @@
+[gd_resource type="Resource" script_class="DamagingArea" load_steps=15 format=3 uid="uid://cg1nembx6u1pm"]
+
+[ext_resource type="PackedScene" uid="uid://qjelovnmkn2x" path="res://projectile.tscn" id="1_22kwu"]
+[ext_resource type="Resource" uid="uid://dcrwc6l7rgfnl" path="res://resources/Evolution/antichrist.tres" id="1_dv2ma"]
+[ext_resource type="Script" path="res://Scripts/Weapon Scripts/DamagingArea.gd" id="2_0umho"]
+[ext_resource type="Texture2D" uid="uid://cp0e6j4l0uuwe" path="res://sprites/fdafdasfsafsa.png" id="2_6i114"]
+[ext_resource type="Resource" uid="uid://c88tblf8ui00b" path="res://resources/Passive Items/health.tres" id="2_ugqf7"]
+[ext_resource type="Script" path="res://Scripts/Upgrades.gd" id="3_7rs53"]
+[ext_resource type="Material" uid="uid://dbk6ncl84j6v6" path="res://Shaders/Radial.tres" id="4_fp6xv"]
+[ext_resource type="AudioStream" uid="uid://bjwskxvr36tjo" path="res://SFX/30754__hello_flowers__billy-the-boxer-count1.wav" id="4_phrf7"]
+[ext_resource type="Script" path="res://Scripts/Weapon Scripts/DamagingAreaUpgrade.gd" id="6_t4rl7"]
+
+[sub_resource type="Resource" id="Resource_qadjy"]
+script = ExtResource("6_t4rl7")
+area = 0.0
+damage = 2.0
+cooldown = 0.0
+description = "+2 Damage"
+
+[sub_resource type="Resource" id="Resource_y2gee"]
+script = ExtResource("6_t4rl7")
+area = 0.0
+damage = 0.0
+cooldown = -0.2
+description = "-0.2s Cooldown"
+
+[sub_resource type="Resource" id="Resource_n32fb"]
+script = ExtResource("6_t4rl7")
+area = 0.25
+damage = 0.0
+cooldown = 0.0
+description = "+25% Area"
+
+[sub_resource type="Resource" id="Resource_yntbv"]
+script = ExtResource("6_t4rl7")
+area = 0.0
+damage = 0.0
+cooldown = -0.2
+description = "-0.2s Cooldown"
+
+[sub_resource type="Resource" id="Resource_wg1k0"]
+script = ExtResource("6_t4rl7")
+area = 0.0
+damage = 2.0
+cooldown = 0.0
+description = "+2 Damage"
+
+[resource]
+script = ExtResource("2_0umho")
+angular_speed = 10.0
+area = 0.5
+damage = 1.0
+cooldown = 1.3
+speed = 0.0
+projectile_node = ExtResource("1_22kwu")
+upgrades = Array[ExtResource("3_7rs53")]([SubResource("Resource_qadjy"), SubResource("Resource_y2gee"), SubResource("Resource_n32fb"), SubResource("Resource_yntbv"), SubResource("Resource_wg1k0")])
+item_needed = ExtResource("2_ugqf7")
+evolution = ExtResource("1_dv2ma")
+sound = ExtResource("4_phrf7")
+particle = ExtResource("4_fp6xv")
+title = "Pentagram"
+icon = ExtResource("2_6i114")
+texture = ExtResource("2_6i114")

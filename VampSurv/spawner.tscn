@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://cmr3xs7kylj2s"]
+
+[ext_resource type="Script" path="res://spawner.gd" id="1_j8vde"]
+[ext_resource type="PackedScene" uid="uid://cknxh1o3uddsr" path="res://enemy.tscn" id="2_pmidr"]
+[ext_resource type="Script" path="res://EnemyType.gd" id="3_1u3ui"]
+[ext_resource type="PackedScene" uid="uid://dmihlo4pn7de2" path="res://resources/destructible.tscn" id="3_il0tt"]
+[ext_resource type="Resource" uid="uid://bu27ll724t5u6" path="res://resources/Enemies/cube.tres" id="3_sbyw0"]
+[ext_resource type="Resource" uid="uid://dv3ss0pqj1o1" path="res://resources/Enemies/eye.tres" id="4_j5xtd"]
+[ext_resource type="Resource" uid="uid://hl0ghe5f1tff" path="res://resources/Enemies/eyelegs.tres" id="5_cumct"]
+[ext_resource type="Resource" uid="uid://rvv8u5nwy4ga" path="res://resources/Enemies/ghost.tres" id="6_b751d"]
+[ext_resource type="Resource" uid="uid://biui088hs5pr0" path="res://resources/Enemies/triple.tres" id="7_uhrwx"]
+
+[node name="Spawner" type="Node2D"]
+script = ExtResource("1_j8vde")
+enemy = ExtResource("2_pmidr")
+destructible = ExtResource("3_il0tt")
+enemy_types = Array[ExtResource("3_1u3ui")]([ExtResource("3_sbyw0"), ExtResource("4_j5xtd"), ExtResource("5_cumct"), ExtResource("6_b751d"), ExtResource("7_uhrwx")])
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -55.0
+offset_top = 5.0
+offset_right = -4.0
+offset_bottom = 45.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+
+[node name="Minute" type="Label" parent="UI/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+
+[node name="Label2" type="Label" parent="UI/HBoxContainer"]
+layout_mode = 2
+text = ":"
+
+[node name="Second" type="Label" parent="UI/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "00"
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Pattern" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="Elite" type="Timer" parent="."]
+wait_time = 9.0
+autostart = true
+
+[node name="Destructible" type="Timer" parent="."]
+wait_time = 9.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Pattern" to="." method="_on_pattern_timeout"]
+[connection signal="timeout" from="Elite" to="." method="_on_elite_timeout"]
+[connection signal="timeout" from="Destructible" to="." method="_on_destructible_timeout"]

@@ -1,0 +1,75 @@
+[gd_resource type="Resource" script_class="Blade" load_steps=15 format=3 uid="uid://04wt8tkdufyi"]
+
+[ext_resource type="Texture2D" uid="uid://b8lb68dkb3ask" path="res://sprites/Fallen_Star.png" id="1_ckt2d"]
+[ext_resource type="Resource" uid="uid://bkckmglhebgcf" path="res://resources/Evolution/Demon Blade.tres" id="1_r4anc"]
+[ext_resource type="PackedScene" uid="uid://qjelovnmkn2x" path="res://projectile.tscn" id="2_cpejn"]
+[ext_resource type="Resource" uid="uid://d028ru4e240rk" path="res://resources/Passive Items/clover.tres" id="2_hg6th"]
+[ext_resource type="Script" path="res://Scripts/Weapon Scripts/Blade.gd" id="3_yhklq"]
+[ext_resource type="AudioStream" uid="uid://joubrvc0mmtf" path="res://SFX/391660__jeckkech__projectile.wav" id="4_mwc6c"]
+[ext_resource type="Material" uid="uid://jhacuyeodven" path="res://Shaders/projectile.tres" id="4_s3hg1"]
+[ext_resource type="Script" path="res://Scripts/Upgrades.gd" id="5_wrq4c"]
+[ext_resource type="Script" path="res://Scripts/BladeUpgrade.gd" id="6_dixp1"]
+
+[sub_resource type="Resource" id="Resource_g2ql6"]
+script = ExtResource("6_dixp1")
+area = 1.0
+speed = 0.0
+amount = 0.0
+damage = 0.0
+cooldown = 0.0
+description = "+100% Area"
+
+[sub_resource type="Resource" id="Resource_b4ls0"]
+script = ExtResource("6_dixp1")
+area = 0.0
+speed = 0.0
+amount = 2.0
+damage = 0.0
+cooldown = 0.0
+description = "+2 Amount"
+
+[sub_resource type="Resource" id="Resource_37i7t"]
+script = ExtResource("6_dixp1")
+area = 0.0
+speed = 200.0
+amount = 0.0
+damage = 0.0
+cooldown = 0.0
+description = "+200 Speed"
+
+[sub_resource type="Resource" id="Resource_smx1e"]
+script = ExtResource("6_dixp1")
+area = 0.0
+speed = 0.0
+amount = 0.0
+damage = 3.0
+cooldown = 0.0
+description = "+3 Damage"
+
+[sub_resource type="Resource" id="Resource_yot8v"]
+script = ExtResource("6_dixp1")
+area = 0.0
+speed = 0.0
+amount = 2.0
+damage = 0.0
+cooldown = 0.0
+description = "+2 Amount"
+
+[resource]
+script = ExtResource("3_yhklq")
+area = 1.0
+amount = 1
+reversible = false
+delay = 0.3
+damage = 5.0
+cooldown = 3.0
+speed = 600.0
+projectile_node = ExtResource("2_cpejn")
+upgrades = Array[ExtResource("5_wrq4c")]([SubResource("Resource_g2ql6"), SubResource("Resource_b4ls0"), SubResource("Resource_37i7t"), SubResource("Resource_smx1e"), SubResource("Resource_yot8v")])
+item_needed = ExtResource("2_hg6th")
+evolution = ExtResource("1_r4anc")
+sound = ExtResource("4_mwc6c")
+particle = ExtResource("4_s3hg1")
+title = "Blade"
+icon = ExtResource("1_ckt2d")
+texture = ExtResource("1_ckt2d")

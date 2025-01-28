@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="PickupMagnet" load_steps=5 format=3 uid="uid://dhuyiosrjkks6"]
+
+[ext_resource type="Texture2D" uid="uid://cohmxm5tu4dee" path="res://sprites/sprite-sheet.png" id="1_g4hpp"]
+[ext_resource type="Script" path="res://Scripts/Vaccum.gd" id="2_m3seo"]
+[ext_resource type="AudioStream" uid="uid://b4g72v46r5kxn" path="res://SFX/55843__sergenious__port.wav" id="3_rfx8j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_me51t"]
+atlas = ExtResource("1_g4hpp")
+region = Rect2(79, 76, 34, 41)
+
+[resource]
+script = ExtResource("2_m3seo")
+title = "Vaccum"
+icon = SubResource("AtlasTexture_me51t")
+description = "Get all the gems"
+sound = ExtResource("3_rfx8j")
+weight = 2.0

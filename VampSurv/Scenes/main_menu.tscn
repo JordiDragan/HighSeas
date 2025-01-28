@@ -1,0 +1,764 @@
+[gd_scene load_steps=56 format=3 uid="uid://cgbjmn4a3bves"]
+
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_6wmd8"]
+[ext_resource type="PackedScene" uid="uid://bhw85m5reoai0" path="res://Scenes/upgrade.tscn" id="1_dj5ai"]
+[ext_resource type="Script" path="res://Scripts/skill_tree.gd" id="1_y0qv5"]
+[ext_resource type="Script" path="res://Scripts/Skill.gd" id="2_i51ck"]
+[ext_resource type="Script" path="res://Scripts/Stats.gd" id="3_tams8"]
+[ext_resource type="Texture2D" uid="uid://bnp0lufrajggv" path="res://sprites/Sprite-Spinach.png" id="4_0jbhv"]
+[ext_resource type="Script" path="res://Scripts/UI_gold.gd" id="5_i66h0"]
+[ext_resource type="Texture2D" uid="uid://bd74to2qgm4ws" path="res://sprites/cloth.png" id="6_2uspb"]
+[ext_resource type="Texture2D" uid="uid://d3d1x6q7y8qsw" path="res://sprites/heart-crystal-heart.png" id="7_lk76l"]
+[ext_resource type="Texture2D" uid="uid://dtxcbd61i8kfn" path="res://sprites/GUI.png" id="8_jd4bc"]
+[ext_resource type="Script" path="res://Scripts/start.gd" id="9_khpry"]
+[ext_resource type="Script" path="res://Scripts/character_list.gd" id="11_6jgaj"]
+[ext_resource type="Script" path="res://Scripts/enemy_list.gd" id="11_w2q8c"]
+[ext_resource type="PackedScene" uid="uid://y4ngp2rfif02" path="res://Scenes/character_slot.tscn" id="12_vsfcg"]
+[ext_resource type="Script" path="res://sprites/character.gd" id="13_1aytr"]
+[ext_resource type="Resource" uid="uid://dphm06cwk8qm3" path="res://resources/Characters/witch.tres" id="14_2dpgs"]
+[ext_resource type="Resource" uid="uid://djbsatf1yav6a" path="res://resources/Characters/samurai.tres" id="15_w8b7y"]
+[ext_resource type="Resource" uid="uid://cfx03o37od1ve" path="res://resources/Characters/necromancer.tres" id="16_upu6r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ikw11"]
+bg_color = Color(0.303708, 0.352163, 0.505994, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 1
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ipnux"]
+bg_color = Color(0.223529, 0.262745, 0.388235, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 1
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_euwxo"]
+bg_color = Color(0.143526, 0.172038, 0.263643, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 1
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="Theme" id="Theme_a34ag"]
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/styles/hover = SubResource("StyleBoxFlat_ikw11")
+Button/styles/normal = SubResource("StyleBoxFlat_ipnux")
+Button/styles/pressed = SubResource("StyleBoxFlat_euwxo")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4bki4"]
+atlas = ExtResource("8_jd4bc")
+region = Rect2(0, 96, 48, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6pfty"]
+texture = SubResource("AtlasTexture_4bki4")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 5.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[sub_resource type="Resource" id="Resource_iwe36"]
+script = ExtResource("3_tams8")
+description = ""
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.1
+area = 0.0
+magnet = 0.0
+growth = 0.0
+luck = 0.0
+
+[sub_resource type="Resource" id="Resource_we5sc"]
+script = ExtResource("2_i51ck")
+name = "Might I"
+texture = ExtResource("4_0jbhv")
+cost = 10
+stats = SubResource("Resource_iwe36")
+
+[sub_resource type="Resource" id="Resource_4a0ir"]
+script = ExtResource("3_tams8")
+description = ""
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.2
+area = 0.0
+magnet = 0.0
+growth = 0.0
+luck = 0.0
+
+[sub_resource type="Resource" id="Resource_klur2"]
+script = ExtResource("2_i51ck")
+name = "Might II"
+texture = ExtResource("4_0jbhv")
+cost = 100
+stats = SubResource("Resource_4a0ir")
+
+[sub_resource type="Resource" id="Resource_spjqp"]
+script = ExtResource("3_tams8")
+description = ""
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.25
+area = 0.0
+magnet = 0.0
+growth = 0.0
+luck = 0.0
+
+[sub_resource type="Resource" id="Resource_kixlv"]
+script = ExtResource("2_i51ck")
+name = "Might III"
+texture = ExtResource("4_0jbhv")
+cost = 500
+stats = SubResource("Resource_spjqp")
+
+[sub_resource type="Resource" id="Resource_povdq"]
+script = ExtResource("3_tams8")
+description = ""
+max_health = 0.0
+recovery = 0.0
+armor = 1.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+luck = 0.0
+
+[sub_resource type="Resource" id="Resource_eytdi"]
+script = ExtResource("2_i51ck")
+name = "Armor I"
+texture = ExtResource("6_2uspb")
+cost = 10
+stats = SubResource("Resource_povdq")
+
+[sub_resource type="Resource" id="Resource_07wjc"]
+script = ExtResource("3_tams8")
+description = ""
+max_health = 0.0
+recovery = 0.0
+armor = 2.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+luck = 0.0
+
+[sub_resource type="Resource" id="Resource_1kfya"]
+script = ExtResource("2_i51ck")
+name = "Armor II"
+texture = ExtResource("6_2uspb")
+cost = 100
+stats = SubResource("Resource_07wjc")
+
+[sub_resource type="Resource" id="Resource_nun6y"]
+script = ExtResource("3_tams8")
+description = ""
+max_health = 0.0
+recovery = 0.0
+armor = 3.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+luck = 0.0
+
+[sub_resource type="Resource" id="Resource_wm2wy"]
+script = ExtResource("2_i51ck")
+name = "Armor III"
+texture = ExtResource("6_2uspb")
+cost = 500
+stats = SubResource("Resource_nun6y")
+
+[sub_resource type="Resource" id="Resource_qpnto"]
+script = ExtResource("3_tams8")
+description = ""
+max_health = 0.0
+recovery = 0.1
+armor = 0.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+luck = 0.0
+
+[sub_resource type="Resource" id="Resource_alisr"]
+script = ExtResource("2_i51ck")
+name = "Recovery I"
+texture = ExtResource("7_lk76l")
+cost = 10
+stats = SubResource("Resource_qpnto")
+
+[sub_resource type="Resource" id="Resource_2gx8v"]
+script = ExtResource("3_tams8")
+description = ""
+max_health = 0.2
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+luck = 0.0
+
+[sub_resource type="Resource" id="Resource_mioog"]
+script = ExtResource("2_i51ck")
+name = "Recovery II"
+texture = ExtResource("7_lk76l")
+cost = 100
+stats = SubResource("Resource_2gx8v")
+
+[sub_resource type="Resource" id="Resource_imwcl"]
+script = ExtResource("3_tams8")
+description = ""
+max_health = 0.3
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+luck = 0.0
+
+[sub_resource type="Resource" id="Resource_bc7l1"]
+script = ExtResource("2_i51ck")
+name = "Recovery III"
+texture = ExtResource("7_lk76l")
+cost = 500
+stats = SubResource("Resource_imwcl")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqc42"]
+atlas = ExtResource("8_jd4bc")
+region = Rect2(2, 34, 44, 44)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q7om7"]
+texture = SubResource("AtlasTexture_xqc42")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ubeta"]
+atlas = ExtResource("8_jd4bc")
+region = Rect2(0, 96, 47, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kv08j"]
+texture = SubResource("AtlasTexture_ubeta")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wma88"]
+atlas = ExtResource("8_jd4bc")
+region = Rect2(49, 97, 30, 30)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a6aog"]
+texture = SubResource("AtlasTexture_wma88")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_816m4"]
+texture = SubResource("AtlasTexture_wma88")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8bcu7"]
+texture = SubResource("AtlasTexture_ubeta")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qsmh0"]
+load_path = "res://.godot/imported/GUI.png-2bb451b023c65b0d861b594128f399d1.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucop7"]
+atlas = SubResource("CompressedTexture2D_qsmh0")
+region = Rect2(0, 96, 48, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vosf5"]
+texture = SubResource("AtlasTexture_ucop7")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 5.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tq73p"]
+atlas = ExtResource("8_jd4bc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ntgan"]
+texture = SubResource("AtlasTexture_tq73p")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+region_rect = Rect2(49, 97, 30, 30)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_a34ag")
+script = ExtResource("1_6wmd8")
+
+[node name="SkillTree" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(320, 180)
+theme_override_styles/panel = SubResource("StyleBoxTexture_6pfty")
+script = ExtResource("1_y0qv5")
+
+[node name="Might" type="Control" parent="SkillTree"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Upgrade" parent="SkillTree/Might" instance=ExtResource("1_dj5ai")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -84.0
+offset_top = -116.0
+offset_right = -44.0
+offset_bottom = -76.0
+grow_horizontal = 2
+grow_vertical = 2
+skill = SubResource("Resource_we5sc")
+
+[node name="Upgrade2" parent="SkillTree/Might" instance=ExtResource("1_dj5ai")]
+layout_mode = 0
+offset_left = -64.0
+offset_top = -8.0
+offset_right = -24.0
+offset_bottom = 32.0
+skill = SubResource("Resource_klur2")
+
+[node name="Upgrade3" parent="SkillTree/Might" instance=ExtResource("1_dj5ai")]
+layout_mode = 0
+offset_left = -64.0
+offset_top = 80.0
+offset_right = -24.0
+offset_bottom = 120.0
+skill = SubResource("Resource_kixlv")
+
+[node name="Armor" type="Control" parent="SkillTree"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Upgrade" parent="SkillTree/Armor" instance=ExtResource("1_dj5ai")]
+layout_mode = 0
+offset_left = 80.0
+offset_top = -96.0
+offset_right = 120.0
+offset_bottom = -56.0
+skill = SubResource("Resource_eytdi")
+
+[node name="Upgrade2" parent="SkillTree/Armor" instance=ExtResource("1_dj5ai")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 60.0
+offset_top = -28.0
+offset_right = 100.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+skill = SubResource("Resource_1kfya")
+
+[node name="Upgrade3" parent="SkillTree/Armor" instance=ExtResource("1_dj5ai")]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 80.0
+offset_right = 120.0
+offset_bottom = 120.0
+skill = SubResource("Resource_wm2wy")
+
+[node name="Recovery" type="Control" parent="SkillTree"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Upgrade" parent="SkillTree/Recovery" instance=ExtResource("1_dj5ai")]
+layout_mode = 0
+offset_left = 228.0
+offset_top = -96.0
+offset_right = 268.0
+offset_bottom = -56.0
+skill = SubResource("Resource_alisr")
+
+[node name="Upgrade2" parent="SkillTree/Recovery" instance=ExtResource("1_dj5ai")]
+layout_mode = 0
+offset_left = 228.0
+offset_top = -8.0
+offset_right = 268.0
+offset_bottom = 32.0
+skill = SubResource("Resource_mioog")
+
+[node name="Upgrade3" parent="SkillTree/Recovery" instance=ExtResource("1_dj5ai")]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 80.0
+offset_right = 268.0
+offset_bottom = 120.0
+skill = SubResource("Resource_bc7l1")
+
+[node name="Label" type="Label" parent="SkillTree"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 72.0
+offset_right = 180.0
+offset_bottom = 95.0
+text = "Lvl 1 - 10 gold"
+
+[node name="Label2" type="Label" parent="SkillTree"]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 162.0
+offset_right = 181.0
+offset_bottom = 185.0
+text = "Lvl 2 - 100 gold"
+
+[node name="Label3" type="Label" parent="SkillTree"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 249.0
+offset_right = 180.0
+offset_bottom = 272.0
+text = "Lvl 3 - 500 gold"
+
+[node name="Menu" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(320, 180)
+theme_override_styles/panel = SubResource("StyleBoxTexture_q7om7")
+
+[node name="Start" type="Button" parent="Menu"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -51.0
+offset_top = -112.0
+offset_right = 52.0
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 0
+theme_override_font_sizes/font_size = 32
+text = "Start"
+
+[node name="Upgrades" type="Button" parent="Menu"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 49.0
+offset_top = -112.0
+offset_right = 224.0
+offset_bottom = -59.0
+grow_vertical = 0
+focus_mode = 0
+theme_override_font_sizes/font_size = 32
+text = "Upgrades"
+
+[node name="Beastiary" type="Button" parent="Menu"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -221.0
+offset_top = -112.0
+offset_right = -47.0
+offset_bottom = -59.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 0
+theme_override_font_sizes/font_size = 32
+text = "Beastiary"
+
+[node name="Beastiary" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(320, 180)
+theme_override_styles/panel = SubResource("StyleBoxTexture_kv08j")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Beastiary"]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 300.0
+offset_bottom = 300.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_a6aog")
+
+[node name="EnemyList" type="VBoxContainer" parent="Beastiary/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("11_w2q8c")
+
+[node name="Information" type="Panel" parent="Beastiary"]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -130.0
+offset_right = -50.0
+offset_bottom = 120.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_816m4")
+
+[node name="Texture" type="TextureRect" parent="Beastiary/Information"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -40.0
+offset_top = 26.0
+offset_right = 40.0
+offset_bottom = 106.0
+grow_horizontal = 2
+expand_mode = 1
+
+[node name="Panel" type="Panel" parent="Beastiary/Information/Texture"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_8bcu7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Beastiary/Information"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 16.0
+offset_top = -8.0
+offset_right = 89.0
+offset_bottom = 69.0
+grow_vertical = 2
+
+[node name="Name" type="Label" parent="Beastiary/Information/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Name: "
+
+[node name="Damage" type="Label" parent="Beastiary/Information/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Damage: "
+
+[node name="Health" type="Label" parent="Beastiary/Information/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Health: "
+
+[node name="CharacterSelection" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(320, 180)
+theme_override_styles/panel = SubResource("StyleBoxTexture_vosf5")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CharacterSelection"]
+custom_minimum_size = Vector2(320, 280)
+layout_mode = 0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 360.0
+offset_bottom = 320.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_ntgan")
+
+[node name="CharacterList" type="GridContainer" parent="CharacterSelection/ScrollContainer"]
+layout_mode = 2
+columns = 3
+script = ExtResource("11_6jgaj")
+character_slot = ExtResource("12_vsfcg")
+characters = Array[ExtResource("13_1aytr")]([ExtResource("14_2dpgs"), ExtResource("15_w8b7y"), ExtResource("16_upu6r")])
+
+[node name="Panel" type="Panel" parent="CharacterSelection"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_left = 464.0
+offset_top = 120.0
+offset_right = 544.0
+offset_bottom = 200.0
+
+[node name="StartingWeapon" type="TextureRect" parent="CharacterSelection/Panel"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_right = 80.0
+offset_bottom = 80.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CharacterSelection/Panel/StartingWeapon"]
+layout_mode = 0
+offset_left = -24.0
+offset_top = -32.0
+offset_right = 105.0
+offset_bottom = -9.0
+text = "Starting Weapon"
+
+[node name="Start" type="Button" parent="CharacterSelection"]
+layout_mode = 0
+offset_left = 472.0
+offset_top = 240.0
+offset_right = 538.0
+offset_bottom = 280.0
+text = "Start"
+script = ExtResource("9_khpry")
+
+[node name="Gold" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -216.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 39.0
+grow_horizontal = 0
+horizontal_alignment = 2
+script = ExtResource("5_i66h0")
+
+[node name="Back" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -46.0
+offset_right = -15.0
+offset_bottom = -15.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 0
+text = "Back"
+
+[connection signal="pressed" from="Menu/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Menu/Upgrades" to="." method="_on_upgrades_pressed"]
+[connection signal="pressed" from="Menu/Beastiary" to="." method="_on_beastiary_pressed"]
+[connection signal="pressed" from="CharacterSelection/Start" to="CharacterSelection/Start" method="_on_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

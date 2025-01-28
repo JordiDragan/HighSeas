@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Chest" load_steps=5 format=3 uid="uid://cynikxrc4624r"]
+
+[ext_resource type="Texture2D" uid="uid://l8s5vipckxb4" path="res://sprites/Fantasy RPG (Toony) 32x32.png" id="1_dv2nk"]
+[ext_resource type="Script" path="res://Scripts/ChestResource.gd" id="2_fd2f6"]
+[ext_resource type="AudioStream" uid="uid://61eo5yawq5ir" path="res://SFX/chest.mp3" id="3_312b2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ubdai"]
+atlas = ExtResource("1_dv2nk")
+region = Rect2(290, 4, 29, 27)
+
+[resource]
+script = ExtResource("2_fd2f6")
+title = "Boss Chest"
+icon = SubResource("AtlasTexture_ubdai")
+description = ""
+sound = ExtResource("3_312b2")

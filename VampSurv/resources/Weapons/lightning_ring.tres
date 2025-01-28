@@ -1,0 +1,65 @@
+[gd_resource type="Resource" script_class="Lightning" load_steps=16 format=3 uid="uid://cx2t611ydct8j"]
+
+[ext_resource type="Texture2D" uid="uid://de3nydm7uoyll" path="res://sprites/Icon-Lightning_Ring-ezgif.com-webp-to-png-converter.png" id="1_4ewtj"]
+[ext_resource type="Resource" uid="uid://dxed67vqr1hbc" path="res://resources/Evolution/thunder_loop.tres" id="1_vdn34"]
+[ext_resource type="PackedScene" uid="uid://qjelovnmkn2x" path="res://projectile.tscn" id="2_7c2w3"]
+[ext_resource type="Script" path="res://Scripts/lightning.gd" id="3_ah8x8"]
+[ext_resource type="Resource" uid="uid://crrceg6ika6yg" path="res://resources/Passive Items/might.tres" id="3_sde5r"]
+[ext_resource type="Texture2D" uid="uid://byexyhg1h5l8q" path="res://sprites/lightning1.png" id="4_okaxy"]
+[ext_resource type="Script" path="res://Scripts/Upgrades.gd" id="4_tleaa"]
+[ext_resource type="AudioStream" uid="uid://dlldb81jg6fu" path="res://SFX/501104__evretro__8-bit-damage-sound.wav" id="6_cmayl"]
+[ext_resource type="Script" path="res://Scripts/lightningupgrade.gd" id="7_r8l7g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfhaw"]
+atlas = ExtResource("4_okaxy")
+region = Rect2(389, 0, 111, 552)
+
+[sub_resource type="Resource" id="Resource_rsdjo"]
+script = ExtResource("7_r8l7g")
+amount = 1
+damage = 0.0
+cooldown = 0.0
+description = "+1 Strike"
+
+[sub_resource type="Resource" id="Resource_u75wg"]
+script = ExtResource("7_r8l7g")
+amount = 0
+damage = 0.0
+cooldown = -1.0
+description = "-1s Cooldown"
+
+[sub_resource type="Resource" id="Resource_xyvo0"]
+script = ExtResource("7_r8l7g")
+amount = 1
+damage = 0.0
+cooldown = 0.0
+description = "+1 Strike"
+
+[sub_resource type="Resource" id="Resource_tflli"]
+script = ExtResource("7_r8l7g")
+amount = 0
+damage = 3.0
+cooldown = 0.0
+description = "+3 Damage"
+
+[sub_resource type="Resource" id="Resource_vj44e"]
+script = ExtResource("7_r8l7g")
+amount = 1
+damage = 0.0
+cooldown = 0.0
+description = "+1 Strike"
+
+[resource]
+script = ExtResource("3_ah8x8")
+amount = 1
+damage = 2.0
+cooldown = 4.0
+speed = 0.0
+projectile_node = ExtResource("2_7c2w3")
+upgrades = Array[ExtResource("4_tleaa")]([SubResource("Resource_rsdjo"), SubResource("Resource_u75wg"), SubResource("Resource_xyvo0"), SubResource("Resource_tflli"), SubResource("Resource_vj44e")])
+item_needed = ExtResource("3_sde5r")
+evolution = ExtResource("1_vdn34")
+sound = ExtResource("6_cmayl")
+title = "Lightning Ring"
+icon = ExtResource("1_4ewtj")
+texture = SubResource("AtlasTexture_bfhaw")

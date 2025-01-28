@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhw85m5reoai0"]
+
+[ext_resource type="Script" path="res://Scripts/upgrade_button.gd" id="1_wf26p"]
+[ext_resource type="PackedScene" uid="uid://bsygvbm4u4js0" path="res://Scenes/line_2d.tscn" id="2_mdg3y"]
+
+[node name="Upgrade" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+toggle_mode = true
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("1_wf26p")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+
+[node name="Outline" parent="." instance=ExtResource("2_mdg3y")]
+
+[node name="Connection" parent="." instance=ExtResource("2_mdg3y")]
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

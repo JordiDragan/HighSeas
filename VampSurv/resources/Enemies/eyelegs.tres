@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Enemy" load_steps=5 format=3 uid="uid://hl0ghe5f1tff"]
+
+[ext_resource type="Script" path="res://Scripts/PickupResource.gd" id="1_4lde7"]
+[ext_resource type="Script" path="res://EnemyType.gd" id="1_mckqo"]
+[ext_resource type="Texture2D" uid="uid://dq6u42e04wx3g" path="res://rpgcosa/3.png" id="2_0on8u"]
+[ext_resource type="Resource" uid="uid://dk2lf6uv65rhs" path="res://resources/Pickups/Green Gem.tres" id="2_equyj"]
+
+[resource]
+script = ExtResource("1_mckqo")
+title = "EyeLegs"
+texture = ExtResource("2_0on8u")
+health = 3.0
+damage = 5.0
+drops = Array[ExtResource("1_4lde7")]([ExtResource("2_equyj")])

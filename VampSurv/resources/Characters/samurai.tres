@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="Character" load_steps=7 format=3 uid="uid://djbsatf1yav6a"]
+
+[ext_resource type="Script" path="res://Scripts/Stats.gd" id="1_pchjd"]
+[ext_resource type="Texture2D" uid="uid://dyr5bdyae52jo" path="res://sprites/FREE_Samurai 2D Pixel Art v1.2/Sprites/IDLE.png" id="2_6a56o"]
+[ext_resource type="Script" path="res://sprites/character.gd" id="3_i237g"]
+[ext_resource type="Resource" uid="uid://04wt8tkdufyi" path="res://resources/Weapons/blade.tres" id="4_g2j14"]
+
+[sub_resource type="Resource" id="Resource_vav38"]
+script = ExtResource("1_pchjd")
+description = ""
+max_health = 1.0
+recovery = 11.0
+armor = 1.0
+movement_speed = 1.0
+might = 1.0
+area = 1.0
+magnet = 1.0
+growth = 1.0
+luck = 1.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxkj1"]
+atlas = ExtResource("2_6a56o")
+region = Rect2(36, 47, 20, 34)
+
+[resource]
+script = ExtResource("3_i237g")
+title = "Samurai"
+icon = SubResource("AtlasTexture_fxkj1")
+animation_name = "samurai"
+base_stats = SubResource("Resource_vav38")
+starting_weapon = ExtResource("4_g2j14")

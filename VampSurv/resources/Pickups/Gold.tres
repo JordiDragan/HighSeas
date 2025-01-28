@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Gold" load_steps=5 format=3 uid="uid://dy8aypchgrwqw"]
+
+[ext_resource type="Texture2D" uid="uid://ef14y8he7siv" path="res://sprites/coin4_16x16.png" id="1_07omv"]
+[ext_resource type="Script" path="res://Scripts/Gold.gd" id="2_is0a8"]
+[ext_resource type="AudioStream" uid="uid://ckg7avma5ycnp" path="res://SFX/350874__cabled_mess__coin_c_08.wav" id="3_dpljf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfyyy"]
+atlas = ExtResource("1_07omv")
+region = Rect2(0, 0, 16, 16)
+
+[resource]
+script = ExtResource("2_is0a8")
+gold = 5
+title = "Gold"
+icon = SubResource("AtlasTexture_jfyyy")
+description = "+5 Gold"
+sound = ExtResource("3_dpljf")
+weight = 10.0

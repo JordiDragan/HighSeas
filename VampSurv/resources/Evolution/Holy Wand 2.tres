@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="SingleShot" load_steps=9 format=3 uid="uid://ssltpd4dq1m3"]
+
+[ext_resource type="PackedScene" uid="uid://qjelovnmkn2x" path="res://projectile.tscn" id="1_p2pjm"]
+[ext_resource type="Material" uid="uid://jhacuyeodven" path="res://Shaders/projectile.tres" id="2_ab62x"]
+[ext_resource type="Script" path="res://Scripts/SingleShot.gd" id="2_jwo1f"]
+[ext_resource type="Texture2D" uid="uid://biqwcdo7c1e6e" path="res://sprites/Icon-Holy_Wand.png" id="3_mnys3"]
+[ext_resource type="AudioStream" uid="uid://joubrvc0mmtf" path="res://SFX/391660__jeckkech__projectile.wav" id="3_vp53q"]
+[ext_resource type="Script" path="res://Scripts/Upgrades.gd" id="4_28n1o"]
+[ext_resource type="Texture2D" uid="uid://dhk66xr013vy4" path="res://sprites/bullet1_strip.png" id="5_psj5y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6occ0"]
+atlas = ExtResource("5_psj5y")
+region = Rect2(0, 0, 10, 10)
+
+[resource]
+script = ExtResource("2_jwo1f")
+damage = 10.0
+cooldown = 0.1
+speed = 500.0
+projectile_node = ExtResource("1_p2pjm")
+upgrades = Array[ExtResource("4_28n1o")]([])
+sound = ExtResource("3_vp53q")
+particle = ExtResource("2_ab62x")
+title = "Holy Wand 2"
+icon = ExtResource("3_mnys3")
+texture = SubResource("AtlasTexture_6occ0")

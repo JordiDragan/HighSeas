@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="MultiDamagingArea" load_steps=7 format=3 uid="uid://dd6itqdw5myb5"]
+
+[ext_resource type="Texture2D" uid="uid://dk7vwpbkhwygl" path="res://sprites/boladofogo.png" id="1_xrjtq"]
+[ext_resource type="PackedScene" uid="uid://qjelovnmkn2x" path="res://projectile.tscn" id="2_cfyuf"]
+[ext_resource type="Material" uid="uid://duap4rryiii5m" path="res://Shaders/fire.tres" id="2_u27gy"]
+[ext_resource type="Script" path="res://Scripts/Weapon Scripts/MultiDamagingArea.gd" id="3_8lt3u"]
+[ext_resource type="AudioStream" uid="uid://dxc372mvp1865" path="res://SFX/573117__silver887__8-bit-flame-or-lava.wav" id="4_i5jgs"]
+[ext_resource type="Script" path="res://Scripts/Upgrades.gd" id="5_28lt2"]
+
+[resource]
+script = ExtResource("3_8lt3u")
+amount = 7
+area = 5.0
+delay = 0.1
+damage = 8.0
+cooldown = 4.0
+speed = 0.0
+projectile_node = ExtResource("2_cfyuf")
+upgrades = Array[ExtResource("5_28lt2")]([])
+sound = ExtResource("4_i5jgs")
+particle = ExtResource("2_u27gy")
+title = "Lava Puddle"
+icon = ExtResource("1_xrjtq")
+texture = ExtResource("1_xrjtq")

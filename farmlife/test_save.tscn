@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://cvee1mg0mijk8"]
+
+[ext_resource type="Script" path="res://node_2d.gd" id="1_sxwwl"]
+[ext_resource type="PackedScene" uid="uid://bhe3i0pw77sk3" path="res://ui/day_night_cycle_component.tscn" id="2_nru0l"]
+[ext_resource type="PackedScene" uid="uid://bea5iiecuwpph" path="res://level1_2.tscn" id="3_k8pkl"]
+[ext_resource type="PackedScene" uid="uid://daxkn04evpbji" path="res://player.tscn" id="7_icge3"]
+[ext_resource type="PackedScene" uid="uid://d1w4txdd65xbr" path="res://ui/game_screen.tscn" id="8_n8sdn"]
+
+[node name="Node2D" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_sxwwl")
+
+[node name="DayNightCycleComponent" parent="." instance=ExtResource("2_nru0l")]
+initial_day = 1
+initial_hour = 12
+initial_minute = 30
+
+[node name="Node2D" parent="." instance=ExtResource("3_k8pkl")]
+
+[node name="Player" parent="." instance=ExtResource("7_icge3")]
+position = Vector2(292, 90)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="GameScreen" parent="." instance=ExtResource("8_n8sdn")]

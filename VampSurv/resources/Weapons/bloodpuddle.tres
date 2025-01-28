@@ -1,0 +1,69 @@
+[gd_resource type="Resource" script_class="MultiDamagingArea" load_steps=15 format=3 uid="uid://o44stehy77o6"]
+
+[ext_resource type="Resource" uid="uid://dd6itqdw5myb5" path="res://resources/Evolution/lava_puddle.tres" id="1_aswfr"]
+[ext_resource type="Texture2D" uid="uid://dk7vwpbkhwygl" path="res://sprites/boladofogo.png" id="1_wklnh"]
+[ext_resource type="PackedScene" uid="uid://qjelovnmkn2x" path="res://projectile.tscn" id="2_blwa0"]
+[ext_resource type="Resource" uid="uid://dm8s0x4k1q64h" path="res://resources/Passive Items/area.tres" id="2_r6oqr"]
+[ext_resource type="Script" path="res://Scripts/Weapon Scripts/MultiDamagingArea.gd" id="3_pf71d"]
+[ext_resource type="Material" uid="uid://duap4rryiii5m" path="res://Shaders/fire.tres" id="4_1btel"]
+[ext_resource type="Script" path="res://Scripts/Upgrades.gd" id="4_6ob6w"]
+[ext_resource type="AudioStream" uid="uid://dxc372mvp1865" path="res://SFX/573117__silver887__8-bit-flame-or-lava.wav" id="4_rf1en"]
+[ext_resource type="Script" path="res://Scripts/Weapon Scripts/MultiDamagingAreaUpgrade.gd" id="6_ymhlo"]
+
+[sub_resource type="Resource" id="Resource_vs0wd"]
+script = ExtResource("6_ymhlo")
+amount = 0
+area = 0.0
+damage = 2.0
+cooldown = 0.0
+description = "+2 Damage"
+
+[sub_resource type="Resource" id="Resource_4gosv"]
+script = ExtResource("6_ymhlo")
+amount = 2
+area = 0.0
+damage = 0.0
+cooldown = 0.0
+description = "+2 Amount"
+
+[sub_resource type="Resource" id="Resource_jcrmy"]
+script = ExtResource("6_ymhlo")
+amount = 0
+area = 0.5
+damage = 0.0
+cooldown = 0.0
+description = "+50% Area"
+
+[sub_resource type="Resource" id="Resource_5khai"]
+script = ExtResource("6_ymhlo")
+amount = 2
+area = 0.0
+damage = 0.0
+cooldown = 0.0
+description = "+2 Amount"
+
+[sub_resource type="Resource" id="Resource_cbykl"]
+script = ExtResource("6_ymhlo")
+amount = 0
+area = 0.0
+damage = 2.0
+cooldown = 0.0
+description = "+2 Damage"
+
+[resource]
+script = ExtResource("3_pf71d")
+amount = 1
+area = 3.0
+delay = 0.2
+damage = 1.0
+cooldown = 4.0
+speed = 0.0
+projectile_node = ExtResource("2_blwa0")
+upgrades = Array[ExtResource("4_6ob6w")]([SubResource("Resource_vs0wd"), SubResource("Resource_4gosv"), SubResource("Resource_jcrmy"), SubResource("Resource_5khai"), SubResource("Resource_cbykl")])
+item_needed = ExtResource("2_r6oqr")
+evolution = ExtResource("1_aswfr")
+sound = ExtResource("4_rf1en")
+particle = ExtResource("4_1btel")
+title = "Blood Puddle"
+icon = ExtResource("1_wklnh")
+texture = ExtResource("1_wklnh")

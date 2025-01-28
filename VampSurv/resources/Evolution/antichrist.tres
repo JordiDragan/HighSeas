@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="DamagingArea" load_steps=8 format=3 uid="uid://dcrwc6l7rgfnl"]
+
+[ext_resource type="Texture2D" uid="uid://8j5bdcbkaj42" path="res://sprites/pejtagram.png" id="1_eqqyu"]
+[ext_resource type="Material" uid="uid://duap4rryiii5m" path="res://Shaders/fire.tres" id="2_dmu2h"]
+[ext_resource type="PackedScene" uid="uid://qjelovnmkn2x" path="res://projectile.tscn" id="2_uvx2k"]
+[ext_resource type="Script" path="res://Scripts/Weapon Scripts/DamagingArea.gd" id="3_a8kod"]
+[ext_resource type="AudioStream" uid="uid://bjwskxvr36tjo" path="res://SFX/30754__hello_flowers__billy-the-boxer-count1.wav" id="4_ep0n0"]
+[ext_resource type="Script" path="res://Scripts/Upgrades.gd" id="5_y33q7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chah7"]
+atlas = ExtResource("1_eqqyu")
+region = Rect2(0, 50, 47, 46)
+
+[resource]
+script = ExtResource("3_a8kod")
+angular_speed = 30.0
+area = 1.0
+damage = 10.0
+cooldown = 0.5
+speed = 0.0
+projectile_node = ExtResource("2_uvx2k")
+upgrades = Array[ExtResource("5_y33q7")]([])
+sound = ExtResource("4_ep0n0")
+particle = ExtResource("2_dmu2h")
+title = "Anti Christ"
+icon = SubResource("AtlasTexture_chah7")
+texture = SubResource("AtlasTexture_chah7")

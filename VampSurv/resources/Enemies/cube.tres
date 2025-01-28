@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Enemy" load_steps=5 format=3 uid="uid://bu27ll724t5u6"]
+
+[ext_resource type="Script" path="res://Scripts/PickupResource.gd" id="1_ftpic"]
+[ext_resource type="Script" path="res://EnemyType.gd" id="1_tnnl8"]
+[ext_resource type="Texture2D" uid="uid://cmkf04weqbul7" path="res://rpgcosa/2.png" id="2_xr31u"]
+[ext_resource type="Resource" uid="uid://b2yg7vacqldpw" path="res://resources/Pickups/blue_gem.tres" id="2_xyfcq"]
+
+[resource]
+script = ExtResource("1_tnnl8")
+title = "Cube"
+texture = ExtResource("2_xr31u")
+health = 3.0
+damage = 1.0
+drops = Array[ExtResource("1_ftpic")]([ExtResource("2_xyfcq")])

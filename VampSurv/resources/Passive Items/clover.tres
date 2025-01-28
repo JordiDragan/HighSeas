@@ -1,0 +1,64 @@
+[gd_resource type="Resource" script_class="PassiveItem" load_steps=8 format=3 uid="uid://d028ru4e240rk"]
+
+[ext_resource type="Texture2D" uid="uid://db702cqgtbaf8" path="res://sprites/Sprite-Clover.png" id="1_3m1gn"]
+[ext_resource type="Script" path="res://Scripts/PassiveItem.gd" id="2_xiwgm"]
+[ext_resource type="Script" path="res://Scripts/Stats.gd" id="3_hgxkx"]
+
+[sub_resource type="Resource" id="Resource_0ea4g"]
+script = ExtResource("3_hgxkx")
+description = "+0.1 Luck"
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+luck = 0.1
+
+[sub_resource type="Resource" id="Resource_pmff1"]
+script = ExtResource("3_hgxkx")
+description = "+0.2 Luck"
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+luck = 0.2
+
+[sub_resource type="Resource" id="Resource_fhvs1"]
+script = ExtResource("3_hgxkx")
+description = "+0.25 Luck"
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+luck = 0.25
+
+[sub_resource type="Resource" id="Resource_s1uei"]
+script = ExtResource("3_hgxkx")
+description = "+0.3 Luck"
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+luck = 0.3
+
+[resource]
+script = ExtResource("2_xiwgm")
+upgrades = Array[ExtResource("3_hgxkx")]([SubResource("Resource_0ea4g"), SubResource("Resource_pmff1"), SubResource("Resource_fhvs1"), SubResource("Resource_s1uei")])
+title = "Clover"
+icon = ExtResource("1_3m1gn")
+texture = ExtResource("1_3m1gn")

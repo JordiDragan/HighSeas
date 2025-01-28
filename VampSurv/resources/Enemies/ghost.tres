@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Enemy" load_steps=5 format=3 uid="uid://rvv8u5nwy4ga"]
+
+[ext_resource type="Script" path="res://EnemyType.gd" id="1_8vlsv"]
+[ext_resource type="Script" path="res://Scripts/PickupResource.gd" id="1_wxyj2"]
+[ext_resource type="Resource" uid="uid://dk2lf6uv65rhs" path="res://resources/Pickups/Green Gem.tres" id="2_0jskl"]
+[ext_resource type="Texture2D" uid="uid://dmbhbfwrd8btc" path="res://rpgcosa/5.png" id="2_lm7tx"]
+
+[resource]
+script = ExtResource("1_8vlsv")
+title = "Ghost"
+texture = ExtResource("2_lm7tx")
+health = 3.0
+damage = 7.0
+drops = Array[ExtResource("1_wxyj2")]([ExtResource("2_0jskl")])

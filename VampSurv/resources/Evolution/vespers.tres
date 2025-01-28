@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Circular" load_steps=7 format=3 uid="uid://cbcpgtg170xgt"]
+
+[ext_resource type="Texture2D" uid="uid://c10x7anokurgm" path="res://sprites/Icon-Unholy_Vespers(1).png" id="1_6mlxs"]
+[ext_resource type="PackedScene" uid="uid://qjelovnmkn2x" path="res://projectile.tscn" id="2_1hgr0"]
+[ext_resource type="Material" uid="uid://jhacuyeodven" path="res://Shaders/projectile.tres" id="2_clems"]
+[ext_resource type="Script" path="res://Scripts/CircularWeapon.gd" id="3_w8iav"]
+[ext_resource type="Texture2D" uid="uid://rhodeiux2ak3" path="res://sprites/star2.png" id="4_k4qxl"]
+[ext_resource type="Script" path="res://Scripts/Upgrades.gd" id="5_rrq7c"]
+
+[resource]
+script = ExtResource("3_w8iav")
+angular_speed = 270
+radius = 75
+amount = 7
+damage = 10.0
+cooldown = 2.0
+speed = 0.0
+projectile_node = ExtResource("2_1hgr0")
+upgrades = Array[ExtResource("5_rrq7c")]([])
+particle = ExtResource("2_clems")
+title = ""
+icon = ExtResource("1_6mlxs")
+texture = ExtResource("4_k4qxl")

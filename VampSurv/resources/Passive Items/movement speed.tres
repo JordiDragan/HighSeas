@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="PassiveItem" load_steps=7 format=3 uid="uid://ctqb77kapepqr"]
+
+[ext_resource type="Script" path="res://Scripts/PassiveItem.gd" id="1_4amn5"]
+[ext_resource type="Texture2D" uid="uid://lc5jcb6rdikt" path="res://sprites/Sprite-Wings.png" id="2_nuyll"]
+[ext_resource type="Script" path="res://Scripts/Stats.gd" id="3_uqjip"]
+
+[sub_resource type="Resource" id="Resource_iwnyf"]
+script = ExtResource("3_uqjip")
+description = "+15 Movement Speed"
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 15.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+
+[sub_resource type="Resource" id="Resource_tr5tj"]
+script = ExtResource("3_uqjip")
+description = "+20 Movement Speed"
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 20.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+
+[sub_resource type="Resource" id="Resource_vk0uu"]
+script = ExtResource("3_uqjip")
+description = "+25 Movement Speed"
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 25.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+
+[resource]
+script = ExtResource("1_4amn5")
+upgrades = Array[ExtResource("3_uqjip")]([SubResource("Resource_iwnyf"), SubResource("Resource_tr5tj"), SubResource("Resource_vk0uu")])
+title = "Movement Speed"
+icon = ExtResource("2_nuyll")
+texture = ExtResource("2_nuyll")

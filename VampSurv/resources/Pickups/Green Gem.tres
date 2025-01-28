@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Gem" load_steps=4 format=3 uid="uid://dk2lf6uv65rhs"]
+
+[ext_resource type="Texture2D" uid="uid://bakae2crxyr7i" path="res://sprites/hastalapoya.png" id="1_votl5"]
+[ext_resource type="Script" path="res://Scripts/Gem.gd" id="2_nlu31"]
+[ext_resource type="AudioStream" uid="uid://cxcg8bdd6roa4" path="res://SFX/276098__littlerobotsoundfactory__gems_single_05.wav" id="3_34hs4"]
+
+[resource]
+script = ExtResource("2_nlu31")
+XP = 2.0
+title = "Green Gem"
+icon = ExtResource("1_votl5")
+description = "Gains Experience."
+sound = ExtResource("3_34hs4")
+weight = 0.0

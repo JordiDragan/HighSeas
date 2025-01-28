@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Blade" load_steps=7 format=3 uid="uid://bkckmglhebgcf"]
+
+[ext_resource type="PackedScene" uid="uid://qjelovnmkn2x" path="res://projectile.tscn" id="1_hnntt"]
+[ext_resource type="Texture2D" uid="uid://rhodeiux2ak3" path="res://sprites/star2.png" id="1_m4gdh"]
+[ext_resource type="Script" path="res://Scripts/Weapon Scripts/Blade.gd" id="2_4cmic"]
+[ext_resource type="Material" uid="uid://jhacuyeodven" path="res://Shaders/projectile.tres" id="2_r6rwq"]
+[ext_resource type="Script" path="res://Scripts/Upgrades.gd" id="3_e8gn5"]
+[ext_resource type="AudioStream" uid="uid://joubrvc0mmtf" path="res://SFX/391660__jeckkech__projectile.wav" id="4_nj6rv"]
+
+[resource]
+script = ExtResource("2_4cmic")
+area = 2.0
+amount = 7
+reversible = true
+delay = 0.2
+damage = 10.0
+cooldown = 3.0
+speed = 1200.0
+projectile_node = ExtResource("1_hnntt")
+upgrades = Array[ExtResource("3_e8gn5")]([])
+sound = ExtResource("4_nj6rv")
+particle = ExtResource("2_r6rwq")
+title = ""
+icon = ExtResource("1_m4gdh")
+texture = ExtResource("1_m4gdh")

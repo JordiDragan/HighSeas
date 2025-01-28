@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://qjelovnmkn2x"]
+
+[ext_resource type="Script" path="res://projectile.gd" id="1_npsds"]
+[ext_resource type="Material" uid="uid://dbk6ncl84j6v6" path="res://Shaders/Radial.tres" id="2_0qg1f"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_wisxu"]
+size = Vector2(10, 10)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l7tb6"]
+resource_local_to_scene = true
+radius = 5.0
+
+[node name="Projectile" type="Area2D"]
+z_index = 3
+z_as_relative = false
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_npsds")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_wisxu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_l7tb6")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="Particle" type="GPUParticles2D" parent="."]
+amount = 200
+process_material = ExtResource("2_0qg1f")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_screen_exited"]

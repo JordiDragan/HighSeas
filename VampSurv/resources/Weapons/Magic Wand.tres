@@ -1,0 +1,66 @@
+[gd_resource type="Resource" script_class="SingleShot" load_steps=17 format=3 uid="uid://b8wct88pd83ru"]
+
+[ext_resource type="Resource" uid="uid://ssltpd4dq1m3" path="res://resources/Evolution/Holy Wand 2.tres" id="1_262ff"]
+[ext_resource type="PackedScene" uid="uid://qjelovnmkn2x" path="res://projectile.tscn" id="1_av5rq"]
+[ext_resource type="Resource" uid="uid://b1q01sbq0h2bl" path="res://resources/Passive Items/magnet.tres" id="2_dxgs6"]
+[ext_resource type="Script" path="res://Scripts/SingleShot.gd" id="2_x3fja"]
+[ext_resource type="Texture2D" uid="uid://c0bcd5e2gv12d" path="res://sprites/img-2025-01-10-05-53-50.png" id="3_exalg"]
+[ext_resource type="Script" path="res://Scripts/Upgrades.gd" id="4_2xkiu"]
+[ext_resource type="Material" uid="uid://jhacuyeodven" path="res://Shaders/projectile.tres" id="4_addt5"]
+[ext_resource type="AudioStream" uid="uid://joubrvc0mmtf" path="res://SFX/391660__jeckkech__projectile.wav" id="5_1nqdn"]
+[ext_resource type="Script" path="res://Scripts/ProjectileUpgrade.gd" id="5_wj200"]
+[ext_resource type="Texture2D" uid="uid://cj0gwfh5rdxfm" path="res://sprites/necrobolt1_strip.png" id="7_wy2yp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlnt2"]
+atlas = ExtResource("7_wy2yp")
+region = Rect2(0, 0, 10, 10)
+
+[sub_resource type="Resource" id="Resource_gtmj7"]
+script = ExtResource("5_wj200")
+speed = 0.0
+damage = 0.0
+cooldown = 0.0
+description = "+1 Damage"
+
+[sub_resource type="Resource" id="Resource_egxnn"]
+script = ExtResource("5_wj200")
+speed = 0.0
+damage = 0.0
+cooldown = -0.2
+description = "-0.2s Cooldown"
+
+[sub_resource type="Resource" id="Resource_cttue"]
+script = ExtResource("5_wj200")
+speed = 200.0
+damage = 0.0
+cooldown = 0.0
+description = "+200 Speed"
+
+[sub_resource type="Resource" id="Resource_v50f4"]
+script = ExtResource("5_wj200")
+speed = 0.0
+damage = 0.0
+cooldown = 0.0
+description = "+2 Damage"
+
+[sub_resource type="Resource" id="Resource_pei3e"]
+script = ExtResource("5_wj200")
+speed = 0.0
+damage = 0.0
+cooldown = -0.1
+description = "-0.1s Cooldown"
+
+[resource]
+script = ExtResource("2_x3fja")
+damage = 1.0
+cooldown = 1.0
+speed = 200.0
+projectile_node = ExtResource("1_av5rq")
+upgrades = Array[ExtResource("4_2xkiu")]([SubResource("Resource_gtmj7"), SubResource("Resource_egxnn"), SubResource("Resource_cttue"), SubResource("Resource_v50f4"), SubResource("Resource_pei3e")])
+item_needed = ExtResource("2_dxgs6")
+evolution = ExtResource("1_262ff")
+sound = ExtResource("5_1nqdn")
+particle = ExtResource("4_addt5")
+title = "Magic Wand"
+icon = ExtResource("3_exalg")
+texture = SubResource("AtlasTexture_vlnt2")

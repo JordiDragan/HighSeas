@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Lightning" load_steps=8 format=3 uid="uid://dxed67vqr1hbc"]
+
+[ext_resource type="Texture2D" uid="uid://c3tj1g01lup80" path="res://sprites/Icon-Thunder_Loop-ezgif.com-webp-to-png-converter.png" id="1_vejs3"]
+[ext_resource type="PackedScene" uid="uid://qjelovnmkn2x" path="res://projectile.tscn" id="2_vxr41"]
+[ext_resource type="Script" path="res://Scripts/lightning.gd" id="3_xrj0o"]
+[ext_resource type="Script" path="res://Scripts/Upgrades.gd" id="4_bfvyu"]
+[ext_resource type="AudioStream" uid="uid://dlldb81jg6fu" path="res://SFX/501104__evretro__8-bit-damage-sound.wav" id="4_cbfiv"]
+[ext_resource type="Texture2D" uid="uid://byexyhg1h5l8q" path="res://sprites/lightning1.png" id="4_kmx44"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4nvk"]
+atlas = ExtResource("4_kmx44")
+region = Rect2(144, 0, 96, 552)
+
+[resource]
+script = ExtResource("3_xrj0o")
+amount = 7
+damage = 10.0
+cooldown = 2.0
+speed = 0.0
+projectile_node = ExtResource("2_vxr41")
+upgrades = Array[ExtResource("4_bfvyu")]([])
+sound = ExtResource("4_cbfiv")
+title = "Thunder Loop"
+icon = ExtResource("1_vejs3")
+texture = SubResource("AtlasTexture_x4nvk")
